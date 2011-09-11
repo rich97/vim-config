@@ -1,7 +1,7 @@
 snippet php
-	<?php
+	<?php ${1:defined('SYSPATH') OR die('No direct access allowed.');}
 
-	${1}
+	${2}
 
 	?>
 snippet ec
@@ -69,9 +69,8 @@ snippet doc_c
 	 * @packaged ${4:default}
 	 * @author ${5:`g:snips_author`}
 	 **/
-	${1:}class ${2:}
-	{${6}
-	} // END $1class $2
+	${1:}class ${2:} {${6}
+	}
 # Constant Definition - post doc
 snippet doc_dp
 	/**
@@ -108,7 +107,7 @@ snippet doc_f
 	 * @return ${5:void}
 	 * @author ${6:`g:snips_author`}
 	 **/
-	${1}function ${2}(${3}) {
+	${1:public }function ${2}(${3}) {
 		${7}
 	}
 # Header
@@ -141,13 +140,15 @@ snippet class
 	/**
 	 * ${1}
 	 **/
-	class ${2:ClassName} {
+	class ${2:ClassName} extends ${3:ClassName} {
 
 		/**
-		 * ${3}
+		 * ${4}
 		 */
-		function ${4:__construct}(${5:argument}) {
-			${6:// code...}
+		public function ${5:__construct}(${6:argument}) {
+			parent::__construct();
+
+			${7:// code...}
 		}
 	}
 # define(...)
@@ -217,3 +218,9 @@ snippet fun
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet construct
+	public function __construct() {
+		${1:parent::__construct();}
+
+		${2}
+	}
