@@ -131,8 +131,20 @@ snippet base
 snippet r
 	<br`Close()[1:]`>
 snippet div
-	<div id="${1:name}">
+	<div${1}>
 		${2}
+	</div>
+snippet divc
+	<div class="${1:class}"${2}>
+		${3}
+	</div>
+snippet divi
+	<div id="${1:id}"${2}>
+		${3}
+	</div>
+snippet divic
+	<div id="${1:id}" class="${2:class}"${3}>
+		${4}
 	</div>
 # Embed QT Movie
 snippet movie
@@ -161,6 +173,8 @@ snippet form
 
 	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
 	</form>
+snippet a
+	<a href="${1:#}"${2}>${3}</a>
 snippet h1
 	<h1 id="${1:heading}">${2:$1}</h1>
 snippet input
@@ -188,3 +202,23 @@ snippet table
 	</table>${4}
 snippet textarea
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+snippet ul
+	<ul>
+		${1}
+	</ul>
+snippet uli
+	<ul id="${1:id}">
+		${2}
+	</ul>
+snippet ulc
+	<ul class="${1:class}">
+		${2}
+	</ul>
+snippet ulic
+	<ul id="${1:id}" class="${2:class}">
+		${3}
+	</ul>
+snippet li
+	<li>${1}</li>
+snippet lic
+	<li class="${1:class}">${2}</li>

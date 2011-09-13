@@ -17,7 +17,7 @@ set nowrap
 set number
 
 "-- Colour scheme
-colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Bright
 
 "-- Show whitespace chars
 set listchars=tab:»\ ,trail:·,extends:>,precedes:<
@@ -41,6 +41,7 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<CR>:%s/  /\t/eg<Bar>:let @/=_
 
 "-- Global variables
 :let g:snips_author = "Richard Vanbergen"
+:let g:netrw_keepdir = 0
 
 "-- Shortcuts
 noremap <C-n> :bn<CR>
