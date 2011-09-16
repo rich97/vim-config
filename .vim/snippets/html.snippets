@@ -95,6 +95,8 @@ snippet docxt
 snippet docx
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+snippet i
+	<${1}>${2}</{$1}>
 snippet html
 	<html>
 	${1}
@@ -175,8 +177,26 @@ snippet form
 	</form>
 snippet a
 	<a href="${1:#}"${2}>${3}</a>
+snippet p
+	<p${1}>${2}</p>
 snippet h1
-	<h1 id="${1:heading}">${2:$1}</h1>
+	<h1${1}>${2}</h1>
+snippet h2
+	<h2${1}>${2}</h2>
+snippet h3
+	<h3${1}>${2}</h3>
+snippet h4
+	<h4${1}>${2}</h4>
+snippet h5
+	<h5${1}>${2}</h5>
+snippet h6
+	<h6${1}>${2}</h6>
+snippet h1i
+	<h1 id="${1:heading}">${2}</h1>
+snippet h2i
+	<h2 id="${1:heading}">${2}</h2>
+snippet h3i
+	<h3 id="${1:heading}">${2}</h3>
 snippet input
 	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
 snippet label
@@ -222,3 +242,5 @@ snippet li
 	<li>${1}</li>
 snippet lic
 	<li class="${1:class}">${2}</li>
+snippet img
+	<img src="${1:image.jpg}" alt="${2:Description of the image}" />
