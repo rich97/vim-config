@@ -47,6 +47,8 @@ snippet backspace
 # ⎋
 snippet escape
 	&#x238B;
+snippet !
+	<!-- ${1} -->${2}
 # Generic Doctype
 snippet doctype HTML 4.01 Strict
 	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
@@ -99,11 +101,11 @@ snippet i
 	<${1}>${2}</{$1}>
 snippet html
 	<html>
-	${1}
+		${1}
 	</html>
 snippet xhtml
 	<html xmlns="http://www.w3.org/1999/xhtml">
-	${1}
+		${1}
 	</html>
 snippet body
 	<body>
@@ -171,8 +173,6 @@ snippet fieldset
 snippet form
 	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
 		${3}
-
-
 	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
 	</form>
 snippet a

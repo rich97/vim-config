@@ -1,4 +1,3 @@
-" Lithium configuration
 "-- Encoding
 set fileencodings=utf-8
 
@@ -46,3 +45,6 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<CR>:%s/  /\t/eg<Bar>:let @/=_
 "-- Shortcuts
 noremap <C-n> :bn<CR>
 noremap <C-p> :bp<CR>
+
+"-- Jump to perl module
+vmap <F2> y :new \| :e `pmpath <C-r>"`<CR>
