@@ -9,14 +9,17 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
-set noexpandtab
+set expandtab
 
 "-- Editor behavior
 set nowrap
 set number
 
+"-- Enable 256 colors
+set t_Co=256
+
 "-- Colour scheme
-colorscheme Tomorrow-Night-Bright
+colorscheme railscasts
 
 "-- Show whitespace chars
 set listchars=tab:»\ ,trail:·,extends:>,precedes:<
@@ -45,6 +48,9 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<CR>:%s/  /\t/eg<Bar>:let @/=_
 "-- Shortcuts
 noremap <C-n> :bn<CR>
 noremap <C-p> :bp<CR>
+
+"-- quick escape
+imap jj <Esc>
 
 "-- Jump to perl module
 vmap <F2> y :new \| :e `pmpath <C-r>"`<CR>

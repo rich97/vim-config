@@ -105,3 +105,5 @@ fi
 if [ "$COLORTERM" == "gnome-terminal" ]; then 
     export TERM=xterm-256color 
 fi
+
+export EDITOR='subl -w';
