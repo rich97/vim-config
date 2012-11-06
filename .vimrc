@@ -10,8 +10,16 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 set expandtab
+set cursorline
+set scrolloff=8
+
+"-- Wildmenu
+set wildmenu
+set wildmode=list:longest
 
 "-- Editor behavior
+set hidden
+set history=1000
 set nowrap
 set number
 
@@ -26,8 +34,8 @@ set listchars=tab:»\ ,trail:·,extends:>,precedes:<
 set list
 
 "-- Highlight long lines (soft limit: 80, hard limit: 100)
-:au BufWinEnter *.php,*.py let w:m1=matchadd('Search', '\%<101v.\%>80v', -1)
-:au BufWinEnter *.php,*.py let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
+au BufWinEnter *.php,*.py let w:m1=matchadd('Search', '\%<101v.\%>80v', -1)
+au BufWinEnter *.php,*.py let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
 
 "-- Remove trailing whitespaces from lines
 autocmd FileType php autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
@@ -37,13 +45,17 @@ autocmd FileType php autocmd BufWritePre <buffer> :call setline(1,map(getline(1,
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<CR>:%s/  /\t/eg<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "-- No eols
-:autocmd BufWritePre *.php setlocal binary
-:autocmd BufWritePre *.php setlocal noeol
-:autocmd BufWritePost *.php setlocal nobinary
+autocmd BufWritePre *.php setlocal binary
+autocmd BufWritePre *.php setlocal noeol
+autocmd BufWritePost *.php setlocal nobinary
 
 "-- Global variables
-:let g:snips_author = "Richard Vanbergen"
-:let g:netrw_keepdir = 0
+let g:snips_author = "Richard Vanbergen"
+let g:netrw_keepdir = 0
+
+"-- PHP highlighting
+let php_sql_query=1
+let php_htmlInStrings=1
 
 "-- Shortcuts
 noremap <C-n> :bn<CR>

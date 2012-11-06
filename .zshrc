@@ -10,6 +10,12 @@ ZSH_THEME="pygmalion"
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias szl="ssh richard@zoolander"
+alias zl="cd ~/Shared/Zoolander/home"
+alias hl="cd ~/Shared/Highlander/tech"
+alias tmux="tmux -2"
+alias update="sudo apt-get update"
+alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -29,7 +35,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textvim ruby lighthouse)
-plugins=(git git-flow)
+plugins=(git git-flow svn)
 
 source $ZSH/oh-my-zsh.sh
 
