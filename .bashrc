@@ -107,3 +107,5 @@ if [ "$COLORTERM" == "gnome-terminal" ]; then
 fi
 
 export EDITOR='subl -w';
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

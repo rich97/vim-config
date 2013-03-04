@@ -8,6 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="pygmalion"
 
 # Example aliases
+alias :q="exit"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias szl="ssh richard@zoolander"
@@ -16,6 +17,10 @@ alias hl="cd ~/Shared/Highlander/tech"
 alias tmux="tmux -2"
 alias update="sudo apt-get update"
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
+alias exip="wget -qO- www.icanhazip.com"
+
+# Servers
+alias pipetolive="ssh -N -p 22 richard@46.38.189.101 -L 6785:localhost:3306"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -41,3 +46,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

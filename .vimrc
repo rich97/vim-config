@@ -42,12 +42,27 @@ autocmd FileType php autocmd BufWritePre <buffer> :call setline(1,map(getline(1,
 
 "-- Press F5 to Clean Current Buffer 
 "-- (i.e., 2-spaces become tabs, end-line whitespace trimmed)
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<CR>:%s/  /\t/eg<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<CR>:let @/=_s<Bar>:nohl<CR>
 
 "-- No eols
 autocmd BufWritePre *.php setlocal binary
 autocmd BufWritePre *.php setlocal noeol
 autocmd BufWritePost *.php setlocal nobinary
+
+"-- Copy and paste mapping
+
+"-- Add CtrlP to runtimepath
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+"-- Wild and CtrlP menu ignores
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+"-- CtrlP remapping
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 "-- Global variables
 let g:snips_author = "Richard Vanbergen"
@@ -59,7 +74,7 @@ let php_htmlInStrings=1
 
 "-- Shortcuts
 noremap <C-n> :bn<CR>
-noremap <C-p> :bp<CR>
+noremap <C-m> :bp<CR>
 
 "-- quick escape
 imap jj <Esc>
